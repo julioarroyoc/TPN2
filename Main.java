@@ -37,7 +37,8 @@ public class Main extends JFrame {
         txtPrecio.setBackground(Color.YELLOW);
         txtStock.setBackground(Color.YELLOW);
 
-        btnRegistrar = new JButton("Registrar"); // Botón para guardar el producto.
+        btnRegistrar = new JButton("Guardar producto"); // Botón para guardar el producto.
+        btnRegistrar.setFont(new Font("Arial", Font.BOLD + Font.ITALIC, 16));
         btnRegistrar.setBackground(Color.YELLOW);
         txtResultado = new JTextArea(); // Área para mostrar resultados.
         txtResultado.setEditable(false); // Evita que el usuario modifique el resultado manualmente.
