@@ -7,7 +7,7 @@ public class Main extends JFrame {
     // Campos de texto para ingresar los datos del producto.
     private JTextField txtNombre, txtPrecio, txtStock;
     // Botón que dispara la acción de registrar el producto.
-    private JButton btnRegistrar;
+    private JButton btnRegistrar, btnLimpiarButton;
     // Área de texto donde se muestra la información del producto.
     private JTextArea txtResultado;
 
@@ -40,13 +40,16 @@ public class Main extends JFrame {
         btnRegistrar = new JButton("Guardar producto"); // Botón para guardar el producto.
         btnRegistrar.setFont(new Font("Arial", Font.BOLD + Font.ITALIC, 16));
         btnRegistrar.setBackground(Color.YELLOW);
+        btnLimpiarButton = new JButton("Limpiar"); // Botón para limpiar los campos.
+        btnLimpiarButton.setFont(new Font("Arial", Font.BOLD + Font.ITALIC, 16));
+        btnLimpiarButton.setBackground(Color.YELLOW);
         txtResultado = new JTextArea(); // Área para mostrar resultados.
         txtResultado.setEditable(false); // Evita que el usuario modifique el resultado manualmente.
         txtResultado.setBackground(Color.GREEN);
         
 
-        // Define un diseño en cuadrícula con 5 filas y 2 columnas.
-        setLayout(new GridLayout(5, 2, 10, 10));
+        // Define un diseño en cuadrícula con 7 filas y 2 columnas.
+        setLayout(new GridLayout(7, 2, 10, 10));
         add(lblNombre); // Agrega la etiqueta de nombre.
         add(txtNombre); // Agrega el campo de texto del nombre.
         add(lblPrecio); // Agrega la etiqueta de precio.
@@ -55,11 +58,21 @@ public class Main extends JFrame {
         add(txtStock); // Agrega el campo de texto del stock.
         add(new JLabel("")); // Agrega un espacio vacío para mantener el formato.
         add(btnRegistrar); // Agrega el botón registrar.
+        add(new JLabel(""));  
+        add(btnLimpiarButton); // Agrega el botón limpiar.
+        add(new JLabel(""));
         add(new JLabel("Resultado:")); // Etiqueta para mostrar el resultado.
+        add(new JLabel(""));
         add(new JScrollPane(txtResultado)); // Agrega un scroll para ver el contenido del texto.
 
         // Cuando se presiona el botón, ejecuta el método registrarProducto.
         btnRegistrar.addActionListener(e -> registrarProducto());
+        btnLimpiarButton.addActionListener(e -> {
+            txtNombre.setText("");
+            txtPrecio.setText("");
+            txtStock.setText("");
+            txtResultado.setText("");
+        });
         setVisible(true); // Hace visible la ventana.
     }
 
