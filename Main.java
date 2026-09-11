@@ -13,7 +13,7 @@ public class Main extends JFrame {
 
     // Constructor de la ventana principal.
     public Main() {
-        setTitle("Sistema de Productos"); // Establece el título de la ventana.
+        setTitle("Inventario de productos."); // Establece el título de la ventana.
         setSize(600, 250); // Define el ancho y alto de la ventana.
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Cierra la aplicación al cerrar la ventana.*/
         setLocationRelativeTo(null); // Centra la ventana en la pantalla.
@@ -38,6 +38,7 @@ public class Main extends JFrame {
         txtResultado = new JTextArea(); // Área para mostrar resultados.
         txtResultado.setEditable(false); // Evita que el usuario modifique el resultado manualmente.
         txtResultado.setBackground(Color.GREEN);
+        
 
         // Define un diseño en cuadrícula con 5 filas y 2 columnas.
         setLayout(new GridLayout(5, 2, 10, 10));
